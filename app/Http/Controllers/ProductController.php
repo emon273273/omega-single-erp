@@ -416,7 +416,7 @@ class ProductController extends Controller
                         return $query->whereIn('status', explode(',', $request->query('status')));
                     })
                     ->orderBy('id', 'desc')
-                    ->with('productVat', 'productSubCategory', 'productBrand', 'productColor.color', 'uom:id,name:id,name', 'productVat:id,title,percentage')
+                    ->with('productVat', 'productSubCategory', 'productBrand', 'productColor.color', 'uom:id,name:id,name', 'productVat:id,title,percentage' , 'discount:id,value,type,startDate,endDate')
                     ->skip($pagination['skip'])
                     ->take($pagination['limit'])
                     ->get();

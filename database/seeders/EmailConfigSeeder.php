@@ -18,7 +18,7 @@ class EmailConfigSeeder extends Seeder
         $emailConfig->emailHost = 'mail.lfix.us';
         $emailConfig->emailPort = '465';
         $emailConfig->emailUser = 'no-reply@lfix.us';
-        $emailConfig->emailPass = '@omega@2020@omega';
+        $emailConfig->emailPass = '@omega@2020';
         $emailConfig->save();
     }
 }

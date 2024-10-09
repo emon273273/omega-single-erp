@@ -50,7 +50,7 @@ class EmploymentStatusController extends Controller
                 $createdEmploymentHistory = EmploymentStatus::create([
                     'name' => $employmentHistoryData['name'],
                     'colourValue' => $employmentHistoryData['colourValue'],
-                    'description' => $employmentHistoryData['description'],
+                    'description' => $employmentHistoryData['description'] ?? null,
                 ]);
 
                 $converted = arrayKeysToCamelCase($createdEmploymentHistory->toArray());
