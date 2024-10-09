@@ -18,3 +18,5 @@ yarn-error.log
 /.vscode
 .DS_Store
 
+storage/app/uploads/*
+storage/app/uploads/
