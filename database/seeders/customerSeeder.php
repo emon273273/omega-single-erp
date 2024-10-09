@@ -13,13 +13,11 @@ class customerSeeder extends Seeder
      */
     public function run(): void
     {
-        $pass = "12345678";
-        $password = Hash::make($pass);
         $customer = new Customer();
         $customer->roleId = 3;
         $customer->username = 'Doe';
         $customer->email = 'dev@omega.ac';
-        $customer->password = $password;
+        $customer->password = Hash::make('1111');
         $customer->phone = '1234567890';
         $customer->address = '123 Main St';
         $customer->save();
