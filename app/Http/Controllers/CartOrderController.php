@@ -502,12 +502,14 @@ class CartOrderController extends Controller
     public function getAllCartOrder(Request $request): JsonResponse
     {
         $data = $request->attributes->get("data");
+
         $userSub = $data['sub'];
         $userRole = $data['role'];
 
         if ($userRole === 'customer') {
             // check authentication
-            $customerFromDB = Customer::where('id', $userSub)->with('role:id,name')->first();
+            $customerFromDB = Customer::where('id', (int)$userSub)->with('role:id,name')->first();
+      
             if ($userSub !== (int)$customerFromDB->id && $userRole !== $customerFromDB->role->name) {
                 return response()->json(['error' => 'Unauthorized'], 401);
             }
@@ -516,7 +518,8 @@ class CartOrderController extends Controller
                 $pagination = getPagination($request->query());
 
                 $allOrder = SaleInvoice::with('saleInvoiceProduct.product', 'user:id,firstName,lastName,username', 'customer:id,username')
-                    ->where('isHold', 'false')
+                    ->where('isHold', 'false',)
+                    ->where('customerId', $userSub)
                     ->orderBy('created_at', 'desc')
                     ->when($request->query('salePersonId'), function ($query) use ($request) {
                         return $query->whereIn('userId', explode(',', $request->query('salePersonId')));
