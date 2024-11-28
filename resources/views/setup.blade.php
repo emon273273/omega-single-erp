@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Setup</title>
+    <title>Backend Setup</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -59,7 +59,7 @@
         <div class="setup-container">
             <div class="setup-header">
                 <h1>Project Setup</h1>
-                <p>Fill in the required details to set up your application.</p>
+                <p>Fill in the required details to set up your backend application.</p>
                 <div class="alert alert-warning" role="alert">
                     Create Database Before Setup and Provide Database Details
                   </div>
@@ -78,15 +78,15 @@
                 @csrf
                 <div class="mb-3">
                     <label for="db_host" class="form-label">Database Host</label>
-                    <input type="text" class="form-control" id="db_host" name="db_host" placeholder="e.g., 127.0.0.1" required>
+                    <input type="text" class="form-control" id="db_host" name="db_host" placeholder="e.g., 127.0.0.1" required value="localhost">
                 </div>
                 <div class="mb-3">
                     <label for="db_port" class="form-label">Database Port</label>
-                    <input type="number" class="form-control" id="db_port" name="db_port" placeholder="e.g., 3306" required>
+                    <input type="number" class="form-control" id="db_port" name="db_port" placeholder="e.g., 3306" required value="3306">
                 </div>
                 <div class="mb-3">
                     <label for="db_database" class="form-label">Database Name</label>
-                    <input type="text" class="form-control" id="db_database" name="db_database" placeholder="e.g., laravel_app" required>
+                    <input type="text" class="form-control" id="db_database" name="db_database" placeholder="e.g., laravel_db" required>
                 </div>
                 <div class="mb-3">
                     <label for="db_username" class="form-label">Database Username</label>
