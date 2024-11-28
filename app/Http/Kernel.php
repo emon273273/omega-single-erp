@@ -53,6 +53,10 @@ class Kernel extends HttpKernel
      * @var array<string, array<int, class-string|string>>
      */
     protected $middlewareGroups = [
+        'web' => [
+            ThrottleRequests::class,
+            SubstituteBindings::class,
+        ],
         'user' => [
             ThrottleRequests::class,
             SubstituteBindings::class,
