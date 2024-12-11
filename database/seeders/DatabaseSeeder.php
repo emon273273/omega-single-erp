@@ -30,7 +30,6 @@ class DatabaseSeeder extends Seeder
             AppSettingSeeder::class,
             AccountSeeder::class,
             SubAccountSeeder::class,
-            EmailConfigSeeder::class,
             ProductCategorySeeder::class,
             ProductSubCategorySeeder::class,
             UoMSeeder::class,
