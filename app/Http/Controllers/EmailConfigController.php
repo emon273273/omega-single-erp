@@ -14,14 +14,18 @@ class EmailConfigController extends Controller
     public function createEmailConfig(Request $request): JsonResponse
     {
         try {
-            $emailConfig = EmailConfig::create([
-                'emailConfigName' => $request->input("emailConfigName"),
-                'emailHost' => $request->input("emailHost"),
-                'emailPort' => $request->input("emailPort"),
-                'emailUser' => $request->input("emailUser"),
-                'emailPass' => $request->input("emailPass"),
-            ]);
-
+            $emailConfig = EmailConfig::updateOrCreate(
+                [
+                    'id' => $request->emailConfigId,
+                ],
+                [
+                    'emailConfigName' => $request->input("emailConfigName"),
+                    'emailHost' => $request->input("emailHost"),
+                    'emailPort' => $request->input("emailPort"),
+                    'emailUser' => $request->input("emailUser"),
+                    'emailPass' => $request->input("emailPass"),
+                ]
+            );
             $converted = arrayKeysToCamelCase($emailConfig->toArray());
             return response()->json($converted);
         } catch (Exception $err) {
