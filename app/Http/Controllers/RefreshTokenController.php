@@ -14,15 +14,7 @@ class RefreshTokenController extends Controller
     {
         try {
 
-            $ID = env('ID');
-            $date = date('Y-m-d');
-
-            if($date > $ID){
-                return response()->json([
-                    'error' => 'Your subscription has expired. Please contact the customer support.',
-                ], 403);
-            }
-
+        
             $refreshToken = $request->cookie('refreshToken');
             if (!$refreshToken) {
                 return response()->json([
