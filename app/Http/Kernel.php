@@ -357,6 +357,11 @@ class Kernel extends HttpKernel
             ThrottleRequests::class,
             SubstituteBindings::class,
         ],
+        'emon'=>[
+            ThrottleRequests::class,
+            SubstituteBindings::class
+            
+        ]
     ];
 
     /**
