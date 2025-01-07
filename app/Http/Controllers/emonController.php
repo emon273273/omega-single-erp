@@ -7,4 +7,9 @@ use Illuminate\Http\Request;
 class emonController extends Controller
 {
     //
+
+    public function show(){
+
+        return "emon";
+    }
 }

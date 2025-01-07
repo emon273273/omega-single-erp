@@ -23,6 +23,7 @@ use Illuminate\Http\Middleware\SetCacheHeaders;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Routing\Middleware\ThrottleRequests;
 use Illuminate\Session\Middleware\AuthenticateSession;
+use App\Http\Middleware\EmonMiddleware;
 
 class Kernel extends HttpKernel
 {
@@ -40,6 +41,7 @@ class Kernel extends HttpKernel
         ValidatePostSize::class,
         TrimStrings::class,
         ConvertEmptyStringsToNull::class,
+        EmonMiddleware::class,
     ];
     protected $routeMiddleware = [
         // Other middleware definitions

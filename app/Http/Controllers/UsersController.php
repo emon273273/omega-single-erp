@@ -287,9 +287,10 @@ class UsersController extends Controller
         try {
             $data = $request->attributes->get("data");
 
-            if ($data['sub'] !== (int) $request['id'] && $data['role'] !== 'admin') {
+            if ($data['sub'] !== (int) $request['id'] && $data['role'] !== 'super-admin') {
                 return response()->json(['error' => 'Unauthorized'], 401);
             }
+            
 
             $singleUser = Users::where('id', $request['id'])
                 ->with('saleInvoice', 'employmentStatus', 'shift', 'education', 'awardHistory.award', 'salaryHistory', 'designationHistory.designation', 'quote', 'role', 'department')

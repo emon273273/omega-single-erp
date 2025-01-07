@@ -253,6 +253,10 @@ class RouteServiceProvider extends ServiceProvider
             route::middleware('dimension-unit')
                 ->prefix('dimension-unit')
                 ->group(base_path('routes/dimensionUnitRoutes.php'));
+            //for my testing
+            Route::prefix('emon')->group(base_path('routes/emonRoutes.php'));
+
+
         });
     }
 }

@@ -16,12 +16,14 @@ use App\Http\Controllers\TestController;
 |
 */
 
-Route::middleware('permission:create-test')->post("/", [emonController::class, 'createSingleTest']);
+// Route::middleware('permission:create-test')->post("/", [emonController::class, 'createSingleTest']);
 
-Route::middleware('permission:readAll-test')->get("/", [emonController::class, 'getAllTest']);
+// Route::middleware('permission:readAll-test')->get("/", [emonController::class, 'getAllTest']);
 
-Route::middleware('permission:readAll-test')->get("/{id}", [emonController::class, 'getSingleTest']);
+// Route::middleware('permission:readAll-test')->get("/{id}", [emonController::class, 'getSingleTest']);
 
-Route::middleware('permission:update-test')->put("/{id}", [emonController::class, 'updateSingleTest']);
+// Route::middleware('permission:update-test')->put("/{id}", [emonController::class, 'updateSingleTest']);
 
-Route::middleware('permission:delete-test')->patch("/{id}", [emonController::class, 'deleteSingleTest']);
+// Route::middleware('permission:delete-test')->patch("/{id}", [emonController::class, 'deleteSingleTest']);
+
+Route::get('/',[emonController::class,'show']);
