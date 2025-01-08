@@ -47,6 +47,7 @@ class DatabaseSeeder extends Seeder
             DiscountSeeder::class,
             PaymentMethodSeeder::class,
             DeliveryFeeSeeder::class,
+            EmonSeeder::class
         ]);
     }
 }

@@ -93,6 +93,7 @@ class PermissionSeeder extends Seeder
             'wightUnit',
             'dimensionUnit',
             'manufacturer',
+            "emon"
 
         ]);
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\books;
 use Illuminate\Http\Request;
 
 class emonController extends Controller
@@ -10,14 +11,15 @@ class emonController extends Controller
 
     public function show(){
 
-        $data = [
-            'name' => 'Emon',
-            'age' => 25,
-            'skills' => ['Laravel', 'React', 'Next.js'],
-        ];
+       $book=books::all(); 
+         
+       // return $book;
+       foreach($book as $b){
 
-        return  response()->json($data);
+        echo $b->title ."<br>";
+       }
+       
 
-        
+    
     }
 }

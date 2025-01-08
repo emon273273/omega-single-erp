@@ -26,10 +26,17 @@ use App\Http\Controllers\TestController;
 // Route::middleware('permission:update-test')->put("/{id}", [emonController::class, 'updateSingleTest']);
 
 // Route::middleware('permission:delete-test')->patch("/{id}", [emonController::class, 'deleteSingleTest']);
+Route::middleware('permission:create-emon')->post("/",[BooksController::class,'createSingleEmon']);
+Route::middleware("permission:readAll-emon")->get("/",[BooksController::class,'getAllEmon']);
+Route::middleware('permission:readAll-emon')->get("/{id}",[BooksController::class,'getSingleEmon']);
 
-Route::get('/',[BooksController::class,'allbook']);
-Route::post("/create",[BooksController::class,"storebook"]);
-Route::get("/find/{id}",[BooksController::class,"show"]);
-Route::put("/update/{id}",[BooksController::class,"updatebook"]);
-Route::delete('/delete/{id}',[BooksController::class,"deletebook"]);
+Route::middleware("permission:update-emon")->put("/{id}",[BooksController::class,'updateSingleEmon']);
+Route::middleware("permission:delete-emon")->delete("/{id}",[BooksController::class,'deleteSingleEmon']);
 
+// Route::get('/',[BooksController::class,'allbook']);
+// Route::post("/create",[BooksController::class,"storebook"]);
+// Route::get("/find/{id}",[BooksController::class,"show"]);
+// Route::put("/update/{id}",[BooksController::class,"updatebook"]);
+// Route::delete('/delete/{id}',[BooksController::class,"deletebook"]);
+
+//Route::middleware('permission:update-')
