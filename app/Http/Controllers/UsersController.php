@@ -287,6 +287,17 @@ class UsersController extends Controller
         try {
             $data = $request->attributes->get("data");
 
+          // dd($request->attributes->get("data"));
+
+         // dd(is_array(($data)));
+
+        //   if (is_array($data)) {
+        //     foreach ($data as $key => $value) {
+        //         echo "Key: $key, Value: $value\n";
+        //     }
+        // }
+            
+
             if ($data['sub'] !== (int) $request['id'] && $data['role'] !== 'super-admin') {
                 return response()->json(['error' => 'Unauthorized'], 401);
             }

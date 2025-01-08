@@ -47,6 +47,7 @@ class Kernel extends HttpKernel
         // Other middleware definitions
         'permission' => AuthorizeMiddleware::class,
         'fileUploader' => FileUploader::class,
+        'emonauth'=>EmonMiddleware::class
     ];
 
     /**

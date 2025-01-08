@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BooksController;
 use App\Http\Controllers\emonController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
@@ -26,4 +27,9 @@ use App\Http\Controllers\TestController;
 
 // Route::middleware('permission:delete-test')->patch("/{id}", [emonController::class, 'deleteSingleTest']);
 
-Route::get('/',[emonController::class,'show']);
+Route::get('/',[BooksController::class,'allbook']);
+Route::post("/create",[BooksController::class,"storebook"]);
+Route::get("/find/{id}",[BooksController::class,"show"]);
+Route::put("/update/{id}",[BooksController::class,"updatebook"]);
+Route::delete('/delete/{id}',[BooksController::class,"deletebook"]);
+
