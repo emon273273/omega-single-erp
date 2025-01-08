@@ -19,4 +19,6 @@ class books extends Model
         'pages',
     ];
 
+    
+
 }

@@ -14,8 +14,13 @@ class BooksController extends Controller
     // all books info
     public function getAllEmon()
     {
+        
 
-        return response()->json(books::all());
+        $book=books::all();
+        //dd($book[0]->id);
+
+        dd($book);
+        return response()->json();
     }
 
     // book store to my data base
